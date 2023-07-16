@@ -15,7 +15,7 @@
 # ■ Створити список цілих, що містить лише негативні числа з першого списку;
 # ■ Створити список цілих, що містить лише позитивні числа з першого списку.
 
-# 1
+
 import random
 try:
     NUM_SIZE = 10
@@ -25,6 +25,7 @@ try:
         numbers.append(random.randint(-10, 10))
     print(numbers)
 
+# 1
 # negative
     for num in numbers:
         if num < 0:
@@ -63,11 +64,63 @@ try:
             positive_end = numbers.index(num)
     for num in range(positive_start, positive_end + 1):
         num_summ5 += numbers[num]
-    print("Суму елементів, що знаходяться між першим та останнім позитивними елементами:", num_summ5)
+    print("Сума елементів, що знаходяться між першим та останнім позитивними елементами:", num_summ5)
+
+# 2
+#
+# Створити список цілих, що містить лише парні числа з першого списку;
+
+    pairs_count = []
+    for num in numbers:
+        count = 0
+        for x in numbers:
+            if x == num:
+                count += 1
+        pairs_count.append(count)
+    pairs_set = []
+    not_pairs_set = []
+    index = 0
+    while index < NUM_SIZE:
+        if pairs_count[index] != 1:
+            pairs_set.append(numbers[index])
+        elif pairs_count[index] == 1:
+            not_pairs_set.append(numbers[index])
+        index += 1
+    print("Створити список цілих, що містить лише парні числа з першого списку: ", pairs_set)
+    print("Створити список цілих, що містить лише непарні числа з першого списку: ", not_pairs_set)
+
+# Створити список цілих, що містить лише непарні числа з першого списку;
+
+    # pairs_count_1 = []
+    # for num in numbers:
+    #     count = 0
+    #     for x in numbers:
+    #         if x == num:
+    #             count += 1
+    #     pairs_count_1.append(count)
+    # not_pairs_set = []
+    # index = 0
+    # while index < NUM_SIZE:
+    #     if pairs_count_1[index] == 1:
+    #         not_pairs_set.append(numbers[index])
+    #     index += 1
+    # print("Створити список цілих, що містить лише непарні числа з першого списку: ", not_pairs_set)
+
+# Створити список цілих, що містить лише негативні числа з першого списку;
+# Створити список цілих, що містить лише позитивні числа з першого списку
+
+    pos_num = []
+    neg_num = []
+    for num in numbers:
+        if num < 0:
+            neg_num.append(num)
+        elif num > 0:
+            pos_num.append(num)
+    print("Створити список цілих, що містить лише негативні числа з першого списку: ", neg_num)
+    print("Створити список цілих, що містить лише позитивні числа з першого списку.:", pos_num)
 
 except Exception as e:
     print(e)
 
-# 2
 
 
